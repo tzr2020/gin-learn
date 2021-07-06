@@ -7,6 +7,7 @@ import "github.com/gin-gonic/gin"
 func main() {
 	r := gin.Default()
 
+	// /user/search?username=zhangsan
 	r.GET("/user/search", func(c *gin.Context) {
 		// 获取查询字符串参数
 		username := c.Query("username")

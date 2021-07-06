@@ -18,8 +18,11 @@ func StatCost() gin.HandlerFunc {
 		start := time.Now()
 		c.Set("message", "Hello, world!")
 
-		// 下一个处理器函数进一步处理请求
+		// 继续下一个处理器函数进一步处理请求
 		c.Next()
+
+		// 中止下一个处理器进一步处理请求
+		// c.Abort()
 
 		cost := time.Since(start)
 		log.Println(cost)

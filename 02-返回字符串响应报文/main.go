@@ -9,18 +9,14 @@ func main() {
 	r := gin.Default()
 
 	// 设置路由
-	r.POST("/user/login", doLogin)
+	r.GET("/index", index)
 
 	// 开启HTTP服务，默认监听端口8080
 	r.Run()
 }
 
 // 处理器函数
-func doLogin(c *gin.Context) {
-	// 获取请求参数
-	username := c.PostForm("username")
-	password := c.PostForm("password")
-
+func index(c *gin.Context) {
 	// 返回字符串响应报文
-	c.String(200, "username: %s\npasswoed: %s\n", username, password)
+	c.String(200, "%s\n", "Hello, world!")
 }
